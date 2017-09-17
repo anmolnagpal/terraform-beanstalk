@@ -23,6 +23,7 @@ variable "s3_bucker" {
 variable "project" {
   type = "map"
   default = {
+    project_name = "pythonterradtcc"
     project_key = "beanstalkpython/pyterra.zip"
     project_source = "pyterra.zip"
   }
