@@ -63,7 +63,7 @@ resource "aws_subnet" "subnet-c" {
 
 
 ##  route table association
-resource "aws_route_table" "subnet-rt-a" {
+resource "aws_route_table" "subnet-a" {
   vpc_id = "${aws_vpc.main.id}"
 
   route {
@@ -72,21 +72,21 @@ resource "aws_route_table" "subnet-rt-a" {
   }
 
   tags {
-    Name        = "subnet-${var.env}-rt-a"
+    Name        = "subnet-${var.env}-a"
     Environment = "${var.env}"
   }
 }
 
 
 # route table association Zone-A
-resource "aws_route_table_association" "subnet-rta-a" {
+resource "aws_route_table_association" "subnet-a" {
   subnet_id      = "${aws_subnet.subnet-a.id}"
-  route_table_id = "${aws_route_table.subnet-rt-a.id}"
+  route_table_id = "${aws_route_table.subnet-a.id}"
 }
 
 
 ##  route table association
-resource "aws_route_table" "subnet-rt-b" {
+resource "aws_route_table" "subnet-b" {
   vpc_id = "${aws_vpc.main.id}"
 
   route {
@@ -95,21 +95,21 @@ resource "aws_route_table" "subnet-rt-b" {
   }
 
   tags {
-    Name        = "subnet-${var.env}-rt-b"
+    Name        = "subnet-${var.env}-b"
     Environment = "${var.env}"
   }
 }
 
 
 # route table association Zone-A
-resource "aws_route_table_association" "subnet-rta-b" {
+resource "aws_route_table_association" "subnet-b" {
   subnet_id      = "${aws_subnet.subnet-b.id}"
-  route_table_id = "${aws_route_table.subnet-rt-b.id}"
+  route_table_id = "${aws_route_table.subnet-b.id}"
 }
 
 
 ##  route table association
-resource "aws_route_table" "subnet-rt-c" {
+resource "aws_route_table" "subnet-c" {
   vpc_id = "${aws_vpc.main.id}"
 
   route {
@@ -118,14 +118,14 @@ resource "aws_route_table" "subnet-rt-c" {
   }
 
   tags {
-    Name        = "subnet-${var.env}-rt-c"
+    Name        = "subnet-${var.env}-c"
     Environment = "${var.env}"
   }
 }
 
 
 # route table association Zone-A
-resource "aws_route_table_association" "subnet-rta-c" {
+resource "aws_route_table_association" "subnet-c" {
   subnet_id      = "${aws_subnet.subnet-c.id}"
-  route_table_id = "${aws_route_table.subnet-rt-c.id}"
+  route_table_id = "${aws_route_table.subnet-c.id}"
 }
