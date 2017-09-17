@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "s3-beanstalk" {
-  bucket = "anmolbeanstalk"
+  bucket = "${var.s3_bucker}"
   region = "${var.region}"
   acl = "private"
   policy = <<POLICY

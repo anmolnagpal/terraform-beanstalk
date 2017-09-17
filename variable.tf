@@ -14,7 +14,7 @@ variable "region" {
 }
 
 variable "s3_bucker" {
-  default     = "pythonterradtcc"
+  default     = "anmolbeanstalk"
   description = "S3 Bucker Name"
 }
 
