@@ -92,3 +92,4 @@ fabric.properties
 .nfs*
 
 /credentials
+/.terraform/
