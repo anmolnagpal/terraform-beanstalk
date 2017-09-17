@@ -23,10 +23,10 @@ variable "s3_bucker" {
 variable "project" {
   type = "map"
   default = {
-    project_name = "python"
-    project_version = "1.0"
-    project_key = "beanstalk/python.zip"
-    project_source = "python.zip"
+    name = "python"
+    version = "1.0"
+    key = "beanstalk/python.zip"
+    source = "python.zip"
   }
 }
 

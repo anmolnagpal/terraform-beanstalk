@@ -1,6 +1,6 @@
 #beanstalk
 resource "aws_elastic_beanstalk_application" "python" {
-  name = "${var.project["project_name"]}"
+  name = "${var.project["name"]}"
   description = "test project"
 }
 
