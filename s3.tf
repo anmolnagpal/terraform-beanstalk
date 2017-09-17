@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "beanstalk" {
+resource "aws_s3_bucket" "s3-beanstalk" {
   bucket = "anmolbeanstalk"
   region = "${var.region}"
   acl = "private"

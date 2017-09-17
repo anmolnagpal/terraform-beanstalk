@@ -1,6 +1,6 @@
 #beanstalk
 resource "aws_s3_bucket_object" "pythonterradtcc" {
-  bucket = "${aws_s3_bucket.pythonterradtcc.id}"
+  bucket = "${aws_s3_bucket.s3-beanstalk.id}"
   key    = "beanstalkpython/pyterra.zip"
   source = "pyterra.zip"
 }
@@ -14,7 +14,7 @@ resource "aws_elastic_beanstalk_application_version" "pythonterradtcc" {
   name        = "pyterradtcc12"
   application = "${aws_elastic_beanstalk_application.pythonterradtcc.name}"
   description = "Version latest of app ${aws_elastic_beanstalk_application.pythonterradtcc.name}"
-  bucket      = "${aws_s3_bucket.pythonterradtcc.id}"
+  bucket      = "${aws_s3_bucket.s3-beanstalk.id}"
   key         = "${aws_s3_bucket_object.pythonterradtcc.id}"
 
 }
