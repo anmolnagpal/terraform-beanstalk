@@ -72,7 +72,7 @@ resource "aws_route_table" "subnet-a" {
   }
 
   tags {
-    Name        = "subnet-${var.env}-a"
+    Name        = "${var.env}-subnet-a"
     Environment = "${var.env}"
   }
 }
@@ -95,7 +95,7 @@ resource "aws_route_table" "subnet-b" {
   }
 
   tags {
-    Name        = "subnet-${var.env}-b"
+    Name        = "${var.env}-subnet-b"
     Environment = "${var.env}"
   }
 }
