@@ -9,7 +9,7 @@ variable "env" {
 }
 
 variable "region" {
-  default     = "eu-west-1"
+  default     = "us-west2"
   description = "Environment Name"
 }
 
