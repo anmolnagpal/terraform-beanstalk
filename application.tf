@@ -5,7 +5,7 @@ resource "aws_elastic_beanstalk_application" "python" {
 }
 
 resource "aws_elastic_beanstalk_application_version" "python" {
-  name = "pyterradtcc12"
+  name = "python"
   application = "${aws_elastic_beanstalk_application.python.name}"
   description = "Version latest of app ${aws_elastic_beanstalk_application.python.name}"
   bucket = "${aws_s3_bucket.s3-beanstalk.id}"
@@ -18,7 +18,6 @@ resource "aws_elastic_beanstalk_environment" "python" {
   application = "${aws_elastic_beanstalk_application.python.name}"
   solution_stack_name = "64bit Amazon Linux 2017.03 v2.5.1 running Python 3.4"
   tier = "WebServer"
-  version_label = "pyterradtcc12"
+  version_label = "${var.project["version"]}"
 
 }
-

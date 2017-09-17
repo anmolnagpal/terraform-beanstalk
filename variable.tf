@@ -24,6 +24,7 @@ variable "project" {
   type = "map"
   default = {
     project_name = "python"
+    project_version = "1.0"
     project_key = "beanstalkpython/pyterra.zip"
     project_source = "pyterra.zip"
   }
