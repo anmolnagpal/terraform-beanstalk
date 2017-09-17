@@ -16,7 +16,7 @@ variable "region" {
 variable "s3_bucker" {
   type = "map"
   default = {
-    bucket_name = "anmolbeanstalk"
+    bucket_name = "beanstalk"
   }
 }
 
@@ -25,8 +25,8 @@ variable "project" {
   default = {
     project_name = "python"
     project_version = "1.0"
-    project_key = "beanstalkpython/pyterra.zip"
-    project_source = "pyterra.zip"
+    project_key = "beanstalk/python.zip"
+    project_source = "python.zip"
   }
 }
 
