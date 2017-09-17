@@ -21,6 +21,6 @@ variable "s3_bucker" {
 variable "vpc" {
   type    = "map"
   default = {
-    cidr_block = "10.100.0.0/16"
+    cidr_block = "10.250.0.0/16"
   }
 }
