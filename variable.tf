@@ -8,6 +8,11 @@ variable "env" {
   description = "Environment Name"
 }
 
+variable "region" {
+  default     = "eu-west-1"
+  description = "Environment Name"
+}
+
 variable "s3_bucker" {
   default     = "pythonterradtcc"
   description = "S3 Bucker Name"
