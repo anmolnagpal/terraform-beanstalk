@@ -118,7 +118,7 @@ resource "aws_route_table" "subnet-c" {
   }
 
   tags {
-    Name        = "subnet-${var.env}-c"
+    Name        = "${var.env}-subnet-c"
     Environment = "${var.env}"
   }
 }
