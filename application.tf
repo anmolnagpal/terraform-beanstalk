@@ -1,19 +1,5 @@
 #beanstalk
 
-
-setting {
-  namespace = "aws:ec2:vpc"
-  name      = "VPCId"
-  value     = "${aws_vpc.main.id}"
-}
-
-setting {
-  namespace = "aws:ec2:vpc"
-  name      = "Subnets"
-  value     = "${aws_subnet.subnet-a.id}"
-}
-
-
 resource "aws_elastic_beanstalk_application" "python" {
   name = "${var.project["name"]}"
   description = "test project"
@@ -34,5 +20,17 @@ resource "aws_elastic_beanstalk_environment" "python" {
   solution_stack_name = "64bit Amazon Linux 2017.03 v2.5.1 running Python 3.4"
   tier = "WebServer"
   version_label = "${var.project["version"]}"
+
+  setting {
+    namespace = "aws:ec2:vpc"
+    name      = "VPCId"
+    value     = "${aws_vpc.main.id}"
+  }
+
+  setting {
+    namespace = "aws:ec2:vpc"
+    name      = "Subnets"
+    value     = "${aws_subnet.subnet-a.id}"
+  }
 
 }

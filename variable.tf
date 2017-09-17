@@ -9,15 +9,12 @@ variable "env" {
 }
 
 variable "region" {
-  default = "us-west2"
+  default = "us-west-2"
   description = "Environment Name"
 }
 
 variable "s3_bucker" {
-  type = "map"
-  default = {
-    bucket_name = "beanstalk"
-  }
+  default = "beanstalk"
 }
 
 variable "project" {

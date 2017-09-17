@@ -22,6 +22,6 @@ POLICY
 
 resource "aws_s3_bucket_object" "python" {
   bucket = "${aws_s3_bucket.s3-beanstalk.id}"
-  key = "${var.project["project_key"]}"
-  source = "${var.project["project_source"]}"
+  key = "${var.project["key"]}"
+  source = "${var.project["source"]}"
 }
