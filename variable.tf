@@ -1,25 +1,27 @@
 variable "vpcName" {
-  default     = "test-vpc"
+  default = "test-vpc"
   description = "Vpc Name"
 }
 
 variable "env" {
-  default     = "test"
+  default = "test"
   description = "Environment Name"
 }
 
 variable "region" {
-  default     = "us-west2"
+  default = "us-west2"
   description = "Environment Name"
 }
 
 variable "s3_bucker" {
-  default     = "anmolbeanstalk"
-  description = "S3 Bucker Name"
+  type = "map"
+  default = {
+    bucket_name = "anmolbeanstalk"
+  }
 }
 
 variable "vpc" {
-  type    = "map"
+  type = "map"
   default = {
     cidr_block = "10.250.0.0/16"
   }
