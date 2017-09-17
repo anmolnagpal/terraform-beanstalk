@@ -17,3 +17,10 @@ variable "s3_bucker" {
   default     = "pythonterradtcc"
   description = "S3 Bucker Name"
 }
+
+variable "vpc" {
+  type    = "map"
+  default = {
+    cidr_block = "10.100.0.0/16"
+  }
+}

@@ -19,3 +19,4 @@ resource "aws_vpc" "main" {
 output VPC {
   value = "${aws_vpc.main.id}"
 }
+
