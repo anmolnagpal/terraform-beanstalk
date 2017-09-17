@@ -32,7 +32,7 @@ resource "aws_subnet" "subnet-a" {
   availability_zone = "${var.region}a"
 
   tags {
-    Name        = "subnet-${var.env}-sn"
+    Name        = "${var.env}-subnet"
     Environment = "${var.env}"
   }
 }
@@ -44,7 +44,7 @@ resource "aws_subnet" "subnet-b" {
   availability_zone = "${var.region}b"
 
   tags {
-    Name        = "subnet-${var.env}-sn"
+    Name        = "${var.env}-subnet"
     Environment = "${var.env}"
   }
 }
@@ -56,7 +56,7 @@ resource "aws_subnet" "subnet-c" {
   availability_zone = "${var.region}c"
 
   tags {
-    Name        = "subnet-${var.env}-sn"
+    Name        = "${var.env}-subnet"
     Environment = "${var.env}"
   }
 }
