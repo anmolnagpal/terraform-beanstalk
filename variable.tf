@@ -1,5 +1,10 @@
+variable "vpcName" {
+  default     = "test-vpc"
+  description = "Vpc Name"
+}
+
 variable "env" {
-  default     = "live"
+  default     = "test"
   description = "Environment Name"
 }
 
