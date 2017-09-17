@@ -11,19 +11,6 @@ variable "subnet-a" {
     cidr_block = "10.250.0.0/20"
   }
 }
-variable "subnet-b" {
-  type    = "map"
-  default = {
-    cidr_block = "10.250.16.0/20"
-  }
-}
-variable "subnet-c" {
-  type    = "map"
-  default = {
-    cidr_block = "10.250.32.0/20"
-  }
-}
-
 
 # Subnets with AZ-A
 resource "aws_subnet" "subnet-a" {
@@ -36,31 +23,6 @@ resource "aws_subnet" "subnet-a" {
     Environment = "${var.env}"
   }
 }
-
-# Subnets with AZ-A
-resource "aws_subnet" "subnet-b" {
-  vpc_id            = "${aws_vpc.main.id}"
-  cidr_block        = "${var.subnet-b["cidr_block"]}"
-  availability_zone = "${var.region}b"
-
-  tags {
-    Name        = "${var.env}-subnet"
-    Environment = "${var.env}"
-  }
-}
-
-# Subnets with AZ-A
-resource "aws_subnet" "subnet-c" {
-  vpc_id            = "${aws_vpc.main.id}"
-  cidr_block        = "${var.subnet-c["cidr_block"]}"
-  availability_zone = "${var.region}c"
-
-  tags {
-    Name        = "${var.env}-subnet"
-    Environment = "${var.env}"
-  }
-}
-
 
 ##  route table association
 resource "aws_route_table" "subnet-a" {
@@ -77,55 +39,8 @@ resource "aws_route_table" "subnet-a" {
   }
 }
 
-
 # route table association Zone-A
 resource "aws_route_table_association" "subnet-a" {
   subnet_id      = "${aws_subnet.subnet-a.id}"
   route_table_id = "${aws_route_table.subnet-a.id}"
-}
-
-
-##  route table association
-resource "aws_route_table" "subnet-b" {
-  vpc_id = "${aws_vpc.main.id}"
-
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_internet_gateway.main.id}"
-  }
-
-  tags {
-    Name        = "${var.env}-subnet-b"
-    Environment = "${var.env}"
-  }
-}
-
-
-# route table association Zone-A
-resource "aws_route_table_association" "subnet-b" {
-  subnet_id      = "${aws_subnet.subnet-b.id}"
-  route_table_id = "${aws_route_table.subnet-b.id}"
-}
-
-
-##  route table association
-resource "aws_route_table" "subnet-c" {
-  vpc_id = "${aws_vpc.main.id}"
-
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = "${aws_internet_gateway.main.id}"
-  }
-
-  tags {
-    Name        = "${var.env}-subnet-c"
-    Environment = "${var.env}"
-  }
-}
-
-
-# route table association Zone-A
-resource "aws_route_table_association" "subnet-c" {
-  subnet_id      = "${aws_subnet.subnet-c.id}"
-  route_table_id = "${aws_route_table.subnet-c.id}"
 }

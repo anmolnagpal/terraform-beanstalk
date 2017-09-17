@@ -1,4 +1,19 @@
 #beanstalk
+
+
+setting {
+  namespace = "aws:ec2:vpc"
+  name      = "VPCId"
+  value     = "${aws_vpc.main.id}"
+}
+
+setting {
+  namespace = "aws:ec2:vpc"
+  name      = "Subnets"
+  value     = "${aws_subnet.subnet-a.id}"
+}
+
+
 resource "aws_elastic_beanstalk_application" "python" {
   name = "${var.project["name"]}"
   description = "test project"
