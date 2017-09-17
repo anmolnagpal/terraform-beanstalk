@@ -1,5 +1,5 @@
 variable "env" {
-  default     = "dev"
+  default     = "live"
   description = "Environment Name"
 }
 
