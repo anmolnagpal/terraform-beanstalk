@@ -9,7 +9,7 @@ variable "env" {
 }
 
 variable "region" {
-  default = "us-west-2"
+  default = "eu-west-1"
   description = "Environment Name"
 }
 
@@ -22,7 +22,7 @@ variable "project" {
   default = {
     name = "python"
     key = "beanstalkpython/pyterra.zip"
-    source = "python.zip"
+    source = "pyterra.zip"
   }
 }
 
