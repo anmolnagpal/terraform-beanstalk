@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "s3-beanstalk" {
-  bucket = "${var.s3_bucker}"
+  bucket = "${var.s3_bucket}"
   region = "${var.region}"
   acl = "private"
   policy = <<POLICY
@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "s3-beanstalk" {
       "Effect": "Allow",
       "Principal": "*",
       "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::anmolbeanstack/*"
+      "Resource": "arn:aws:s3:::beanstalkpython/*"
     }
   ]
 }

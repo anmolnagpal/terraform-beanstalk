@@ -13,16 +13,15 @@ variable "region" {
   description = "Environment Name"
 }
 
-variable "s3_bucker" {
-  default = "beanstalk"
+variable "s3_bucket" {
+  default = "beanstalkpython"
 }
 
 variable "project" {
   type = "map"
   default = {
     name = "python"
-    version = "1.0"
-    key = "beanstalk/python.zip"
+    key = "beanstalkpython/pyterra.zip"
     source = "python.zip"
   }
 }
